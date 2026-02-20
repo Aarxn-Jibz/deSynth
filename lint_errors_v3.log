@@ -1,0 +1,33 @@
+
+> chordsplit-ai-pitch@0.0.0 lint
+> eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0
+
+
+D:\dev\code\foobarPitch\src\components\ConfidenceSlider.tsx
+  26:103  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\dev\code\foobarPitch\src\components\ConfidenceSlider.tsx:26:103
+  24 |                             {[...Array(10)].map((_, i) => (
+  25 |                                 <div key={i} className="flex space-x-2">
+> 26 |                                     <div className="h-1 bg-green-500 rounded-full" style={{ width: `${Math.random() * 40 + 10}%`, marginLeft: `${Math.random() * 50}%` }} />
+     |                                                                                                       ^^^^^^^^^^^^^ Cannot call impure function
+  27 |                                 </div>
+  28 |                             ))}
+  29 |                             <p className="text-center text-xs text-green-500 mt-4 font-mono">Raw MIDI Data detected...</p>                                             react-hooks/purity
+  26:146  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\dev\code\foobarPitch\src\components\ConfidenceSlider.tsx:26:146
+  24 |                             {[...Array(10)].map((_, i) => (
+  25 |                                 <div key={i} className="flex space-x-2">
+> 26 |                                     <div className="h-1 bg-green-500 rounded-full" style={{ width: `${Math.random() * 40 + 10}%`, marginLeft: `${Math.random() * 50}%` }} />
+     |                                                                                                                                                  ^^^^^^^^^^^^^ Cannot call impure function
+  27 |                                 </div>
+  28 |                             ))}
+  29 |                             <p className="text-center text-xs text-green-500 mt-4 font-mono">Raw MIDI Data detected...</p>  react-hooks/purity
+
+✖ 2 problems (2 errors, 0 warnings)
+

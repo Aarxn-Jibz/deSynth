@@ -1,0 +1,6 @@
+src/App.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Footer.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Hero.tsx(3,18): error TS6133: 'Music' is declared but its value is never read.
+src/components/Hero.tsx(4,1): error TS6133: 'cn' is declared but its value is never read.
+src/components/ResultDashboard.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/StemVisualizer.tsx(1,1): error TS6133: 'React' is declared but its value is never read.

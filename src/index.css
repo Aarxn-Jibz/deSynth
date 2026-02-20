@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon-pink: #ff00e5;
+    --neon-cyan: #00f0ff;
+    --neon-yellow: #faff00;
+    --neon-purple: #a06cd5;
+  }
+
+  body {
+    @apply bg-background text-white antialiased selection:bg-neon-pink selection:text-white overflow-x-hidden;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Scanlines Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface/40 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .text-glow-pink {
+    @apply text-neon-pink drop-shadow-neon-pink;
+  }
+
+  .text-glow-cyan {
+    @apply text-neon-cyan drop-shadow-neon-cyan;
+  }
+
+  .grid-bg {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+}
